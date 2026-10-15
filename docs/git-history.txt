@@ -1,45 +1,92 @@
 Git history snapshot — 2026-10-15 (Asia/Seoul)
 Repository: https://github.com/1st0Groom/B2-2
-Fetched origin/main: 8a806a6380ad8461dd46d333e3881ed2e1c70e7f
+Fetched origin/main: bc0aa0f5c5851cc3213f8c516699f70a5485eabc
 Command: git log --oneline --graph --all
-Scope: fetched refs and local branches at capture time; includes unmerged work.
-Not the final team history. Refresh after all final PRs are merged.
-This evidence PR itself is not included in this snapshot.
+Scope: local and fetched refs at capture time. Includes all merged A-D evidence PRs.
+The final submission commit itself is not included.
 
-* 2d5ef0d docs: record teammate confirmation of conflict resolution
-* 83464f8 docs: address review feedback on Git practice records
-* b0860c9 docs: link README conflict resolution evidence
-*   cf7db10 docs: resolve conflicting README execution instructions
+*   bc0aa0f Merge pull request #33 from 1st0Groom/feature/kfri-codex-evidence
 |\  
-* | 98dc50e docs: add README instructions and stash practice record
+| *   025da83 docs: merge main and preserve all submission evidence
+| |\  
+| |/  
+|/|   
+* |   2f3509f Merge pull request #35 from 1st0Groom/feature/opdata-submission
+|\ \  
+| * \   c96c6ea Merge remote-tracking branch 'origin/main' into feature/opdata-submission
+| |\ \  
+| |/ /  
+|/| |   
+* | |   ce80d77 Merge pull request #29 from 1st0Groom/feature/ysh-submission-evidence
+|\ \ \  
+| * | | e686a5e docs: update completed conflict evidence status after review
+| * | |   d5659bc Merge remote-tracking branch 'origin/main' into feature/ysh-submission-evidence
+| |\ \ \  
+| * | | | ef95088 docs: link A submission evidence and conflict resolution verification
+* | | | |   613648f Merge pull request #32 from 1st0Groom/feature/hay-submission-evidence
+|\ \ \ \ \  
+| * | | | | a04d9c1 docs: add D submission evidence links
+| | |/ / /  
+| |/| | |   
+| | | * | e8fd098 docs: add C submission evidence links
+| |_|/ /  
+|/| | |   
+| | | * f72e97e docs: fill B submission evidence links
+| | | * a37069e docs: add B Codex usage evidence
+| |_|/  
+|/| |   
+* | |   7efc235 Merge pull request #27 from 1st0Groom/feature/kfri-collaboration-docs
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 576fccc docs: remove duplicate re-review guidance
+| * | 4f9fd15 docs: clarify B review rules and link reset evidence
+| * |   d1ca25a Merge remote-tracking branch 'origin/main' into feature/kfri-collaboration-docs
+| |\ \  
+| |/ /  
+|/| |   
+* | |   2031862 Merge pull request #25 from 1st0Groom/feature/hay-collaboration-docs
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 2d5ef0d docs: record teammate confirmation of conflict resolution
+| * | 83464f8 docs: address review feedback on Git practice records
+| * | b0860c9 docs: link README conflict resolution evidence
+| * |   cf7db10 docs: resolve conflicting README execution instructions
+| |\ \  
+| * | | 98dc50e docs: add README instructions and stash practice record
+* | | |   8a806a6 Merge pull request #26 from 1st0Groom/feature/SeungEon-collaboration-docs
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | |   33c2a4b docs: 작업 시작 절차 충돌 해결과 실습 기록 추가
+| |\ \ \  
+| * | | | d35c053 docs: 작업 시작 전 최신 main확인과 작업 공유 명시
+| | |/ /  
+| |/| |   
+* | | |   8d9ad91 Merge pull request #24 from 1st0Groom/feature/opdata-collaboration-docs
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | | bb4e81d docs: record revert practice in troubleshooting log
+| * | | ec60562 Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
+| * | | d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
+| * | | 1726bee docs: add README execution instructions for average script
+| |/ /  
+| | * e13c5a5 docs: restore A instructions and record B reset verification
+| | * d63e6c6 docs: clarify review and re-review requirements
 | | *   6f1bc7e Merge remote-tracking branch 'origin/feature/kfri-collaboration-docs' into feature/kfri-collaboration-docs
 | | |\  
 | | | * a9f36f3 docs: record B soft reset practice
 | | * | e584ffd docs: require commit and verification details for re-review
 | | |/  
 | | * 15850c0 docs: define issue-linked PR and substantive review requirements
-| | | * 8a806a6 Merge pull request #26 from 1st0Groom/feature/SeungEon-collaboration-docs
-| | |/| 
-| |/| | 
-| | | *   33c2a4b docs: 작업 시작 절차 충돌 해결과 실습 기록 추가
-| | | |\  
-| | | |/  
-| | |/|   
-| | | * d35c053 docs: 작업 시작 전 최신 main확인과 작업 공유 명시
-| |_|/  
-|/| |   
-| * |   8d9ad91 Merge pull request #24 from 1st0Groom/feature/opdata-collaboration-docs
-| |\ \  
-| | |/  
-| |/|   
-| | * bb4e81d docs: record revert practice in troubleshooting log
-| | * ec60562 Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
-| | * d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
-| | * 1726bee docs: add README execution instructions for average script
 | |/  
 |/|   
-| * 09b7a4a Merge pull request #23 from 1st0Groom/feature/ysh-collaboration-docs
-|/| 
+* |   09b7a4a Merge pull request #23 from 1st0Groom/feature/ysh-collaboration-docs
+|\ \  
+| |/  
+|/|   
 | * 5ca673e docs: record A local amend practice and verification
 | * 393795e docs: define team branch naming and commit rules
 |/  

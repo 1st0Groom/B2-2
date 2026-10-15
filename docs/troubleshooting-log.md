@@ -1,7 +1,6 @@
 # Git 트러블슈팅 기록
 
-이 문서는 템플릿입니다. 실습 전에는 완료 증빙으로 제출하지 않습니다.
-각 사례에 실제 명령·출력·커밋 링크를 넣으세요.
+A~E가 수행·확인한 4종 Git 실습의 명령, 출력, 커밋 및 리뷰 링크를 기록했습니다. 보존하지 못한 출력과 실패한 시도는 각각의 항목에서 구분합니다.
 
 ## amend — A
 
@@ -44,7 +43,7 @@ git status --short
 ## reset --soft — B
 
 - 참여자 / 역할: Kfri (@Kfri-cloud) / B
-- 상태: 최초 및 추가 실습과 사후 검증 완료 (2026-10-15). [Issue #30](https://github.com/1st0Groom/B2-2/issues/30), [PR #27](https://github.com/1st0Groom/B2-2/pull/27)에서 기록 제출 및 리뷰 진행
+- 상태: 최초 및 추가 실습과 사후 검증 완료 (2026-10-15). [Issue #30](https://github.com/1st0Groom/B2-2/issues/30), [PR #27](https://github.com/1st0Groom/B2-2/pull/27)에서 기록 제출·리뷰 반영·승인 후 병합 완료
 - 브랜치: `feature/kfri-collaboration-docs`
 - 상황: push 전 CONTRIBUTING의 PR·리뷰 규칙 변경 커밋을 취소하고 변경은 유지한 뒤 더 구체적인 메시지로 다시 커밋했다.
 - 절차: `git reset --soft HEAD~1`, `git status`, `git diff --cached`, 다시 커밋. PowerShell 명령 기록에서 soft reset 및 cached diff 명령을 확인했다. 당시 status와 cached diff의 터미널 출력은 별도 보존되지 않아 재구성하지 않았다.
@@ -67,7 +66,7 @@ c7e787b HEAD@{2}: commit: docs: define PR and review requirements
 ```
 
 - 결과: 로컬 커밋 취소 후 동일한 문서 변경으로 새 커밋을 만들었다. 사진에는 커밋 취소 후 변경 파일이 유지된 상태가 남아 있다. staged 상태 자체는 당시 터미널 출력이 없어 별도 증빙하지 못했다.
-- 증빙: 로컬 reflog와 스크린샷 `kfri-1_commit.jpg`, `kfri-2_reset.jpg`, `kfri-2_reset2.jpg`, `kfri-3_commit.jpg`. 스크린샷은 앞선 반복 실습 장면이며, 위 해시는 최종 실습 구간 기준이다. 업로드 후 PR과 최종 커밋 링크를 추가한다.
+- 증빙: 로컬 reflog와 스크린샷 `kfri-1_commit.jpg`, `kfri-2_reset.jpg`, `kfri-2_reset2.jpg`, `kfri-3_commit.jpg`. 스크린샷은 앞선 반복 실습 장면이며, 위 해시는 최종 실습 구간 기준이다. 스크린샷 파일의 저장소 업로드는 확인하지 못했다. 실제 보존된 텍스트와 [PR #27](https://github.com/1st0Groom/B2-2/pull/27), [리뷰 반영 커밋 576fccc](https://github.com/1st0Groom/B2-2/commit/576fcccefa6bd996de7a3f5b22ff9da0ca7fbf0f)를 증빙으로 사용한다.
 - 선택 이유: 커밋을 취소하면서 변경을 staged 상태로 유지하기 위해서.
 - 주의점: 직전 커밋이 존재해야 한다. 공유·push된 커밋에는 이 실습을 하지 않는다.
 
