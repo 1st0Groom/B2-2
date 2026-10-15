@@ -6,7 +6,7 @@
 ## amend — A
 
 - 참여자 / 역할: ysh (@netrunnerr25) / A
-- 상태: 로컬 amend 실습 완료 (2026-10-15), PR 리뷰·승인은 별도 진행
+- 상태: 로컬 amend 실습 완료 (2026-10-15), [PR #23](https://github.com/1st0Groom/B2-2/pull/23)의 [B 승인](https://github.com/1st0Groom/B2-2/pull/23#pullrequestreview-5529120429) 및 병합 확인
 - 상황: push 전 최근 커밋의 메시지에 잘못된 함수명이 들어갔다.
 - 절차: CONTRIBUTING의 A 담당 변경만 stage하고 아직 push하지 않은 최근 커밋의 메시지를 수정했다.
 
@@ -36,7 +36,7 @@ git status --short
 
 - 결과: 메시지와 커밋 해시가 변경되었다. amend 직후 `git status --short` 출력은 비어 있었다.
 - 내용 검증: `git diff 2721900a19a59cdf786f38f612799c52d0fef10a 393795e3537eb5f6a33a55e2adbcd42d19619654 --exit-code`가 출력 없이 종료 코드 0으로 끝나 파일 내용이 같음을 확인했다.
-- 브랜치: `feature/ysh-collaboration-docs`. E와의 동일 기준 커밋 확인은 별도 확인이 필요하다.
+- 브랜치: `feature/ysh-collaboration-docs`. A의 시작 커밋은 `bf0304e7c57d12b08f92aedaceaa6c8898421fdd`이며, E의 병합 전 변경과 A 문서 커밋의 merge-base도 같은 해시임을 확인했다. [충돌 2의 실제 커밋 구조와 A 확인](conflict-resolution.md#충돌-2--contributing-작업-시작-절차)을 참조한다.
 - 증빙: [수정 후 커밋](https://github.com/1st0Groom/B2-2/commit/393795e3537eb5f6a33a55e2adbcd42d19619654), [담당 Issue #10](https://github.com/1st0Groom/B2-2/issues/10), [충돌 실습 Issue #22](https://github.com/1st0Groom/B2-2/issues/22). 수정 전 커밋은 push하지 않았다.
 - 선택 이유: 최근 로컬 커밋의 메시지만 수정하기 위해서.
 - 주의점: 커밋 해시가 바뀐다. 이 실습은 push 전에 한다.
