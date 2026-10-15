@@ -11,7 +11,7 @@
 | A | TODO | TODO | TODO | TODO | TODO | TODO |
 | B | TODO | TODO | TODO | TODO | TODO | TODO |
 | C | TODO | TODO | TODO | TODO | TODO | TODO |
-| D | TODO | TODO | TODO | TODO | TODO | TODO |
+| Hay (D, `@hay-dev2024`) | [#6](https://github.com/1st0Groom/B2-2/issues/6), [#20](https://github.com/1st0Groom/B2-2/issues/20) | [#14](https://github.com/1st0Groom/B2-2/pull/14), [#25](https://github.com/1st0Groom/B2-2/pull/25) | [#15 리뷰](https://github.com/1st0Groom/B2-2/pull/15#pullrequestreview-5528825343), [#24 변경 요청](https://github.com/1st0Groom/B2-2/pull/24#pullrequestreview-5529171746) | [#14 답변](https://github.com/1st0Groom/B2-2/pull/14#discussion_r4279664369)·[반영 커밋](https://github.com/1st0Groom/B2-2/commit/41183d7836673d9ee7fdd0fbeeba7b8a938abe72), [#25 답변](https://github.com/1st0Groom/B2-2/pull/25#discussion_r4280085395)·[반영 커밋](https://github.com/1st0Groom/B2-2/commit/83464f8) | [`41183d7`](https://github.com/1st0Groom/B2-2/commit/41183d7836673d9ee7fdd0fbeeba7b8a938abe72) | [stash 기록](docs/troubleshooting-log.md#stash--stash-pop--d-e), [E 확인](https://github.com/1st0Groom/B2-2/pull/25#discussion_r4280047517), [충돌 해결 `cf7db10`](https://github.com/1st0Groom/B2-2/commit/cf7db10) |
 | E | TODO | TODO | TODO | TODO | TODO | TODO |
 
 ## 문서와 증빙
