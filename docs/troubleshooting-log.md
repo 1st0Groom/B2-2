@@ -44,7 +44,7 @@ git status --short
 ## reset --soft — B
 
 - 참여자 / 역할: Kfri (@Kfri-cloud) / B
-- 상태: 로컬 실습 및 사후 검증 완료 (2026-10-15), push·PR은 미완료
+- 상태: 최초 실습 기록은 push 완료. 추가 로컬 실습 및 사후 검증 완료 (2026-10-15), 추가 실습 커밋은 아직 push하지 않음
 - 브랜치: `feature/kfri-collaboration-docs`
 - 상황: push 전 CONTRIBUTING의 PR·리뷰 규칙 변경 커밋을 취소하고 변경은 유지한 뒤 더 구체적인 메시지로 다시 커밋했다.
 - 절차: `git reset --soft HEAD~1`, `git status`, `git diff --cached`, 다시 커밋. PowerShell 명령 기록에서 soft reset 및 cached diff 명령을 확인했다. 당시 status와 cached diff의 터미널 출력은 별도 보존되지 않아 재구성하지 않았다.
@@ -70,6 +70,54 @@ c7e787b HEAD@{2}: commit: docs: define PR and review requirements
 - 증빙: 로컬 reflog와 스크린샷 `kfri-1_commit.jpg`, `kfri-2_reset.jpg`, `kfri-2_reset2.jpg`, `kfri-3_commit.jpg`. 스크린샷은 앞선 반복 실습 장면이며, 위 해시는 최종 실습 구간 기준이다. 업로드 후 PR과 최종 커밋 링크를 추가한다.
 - 선택 이유: 커밋을 취소하면서 변경을 staged 상태로 유지하기 위해서.
 - 주의점: 직전 커밋이 존재해야 한다. 공유·push된 커밋에는 이 실습을 하지 않는다.
+
+### B 추가 실습 — staged 변경 출력 확인
+
+첫 재시도에서는 최초 commit이 실패했지만 reset을 실행하여 원격과 로컬 이력이 갈라졌다. 내용이 동일함을 확인한 뒤 `git merge --no-edit origin/feature/kfri-collaboration-docs`로 양쪽 이력을 보존했고, 병합 커밋 `6f1bc7e`를 push했다. 이 시도는 정상적인 soft reset 증빙으로 사용하지 않는다.
+
+이후 실제 문서 변경을 확인하고 새 로컬 커밋으로 다시 실습했다. 아래 명령 사이에는 push하지 않았다.
+
+```sh
+git add docs/CONTRIBUTING.md
+git commit -m "docs: update review guidance"
+git reset --soft HEAD~1
+git status
+git --no-pager diff --cached
+git commit -m "docs: clarify review and re-review requirements"
+git --no-pager log -2 --oneline
+```
+
+취소 전 실제 commit 출력:
+
+```text
+[feature/kfri-collaboration-docs 5e842c5] docs: update review guidance
+ 1 file changed, 12 insertions(+), 13 deletions(-)
+```
+
+reset 후 사용자가 보존한 `git --no-pager diff --cached` 출력에는 다음 staged 변경이 포함되었다 (발췌):
+
+```diff
+diff --git a/docs/CONTRIBUTING.md b/docs/CONTRIBUTING.md
+index fa06435..8e2bb6e 100644
+--- a/docs/CONTRIBUTING.md
++++ b/docs/CONTRIBUTING.md
++- 재리뷰 요청 시 수정 커밋과 재검증 결과를 함께 안내한다.
+```
+
+위 diff는 발췌이며 전체 패치가 아니다. cached diff에 문서 변경이 출력되어 staged 상태 유지가 확인됐다. 당시 `git status` 출력은 대화에 제공되지 않아 재구성하지 않았다.
+
+재커밋 실제 출력:
+
+```text
+[feature/kfri-collaboration-docs d63e6c6] docs: clarify review and re-review requirements
+ 1 file changed, 12 insertions(+), 13 deletions(-)
+d63e6c6 (HEAD -> feature/kfri-collaboration-docs) docs: clarify review and re-review requirements
+6f1bc7e (origin/feature/kfri-collaboration-docs) Merge remote-tracking branch 'origin/feature/kfri-collaboration-docs' into feature/kfri-collaboration-docs
+```
+
+사후 검증: `git diff 5e842c5 d63e6c6 --exit-code`가 출력 없이 종료 코드 0으로 끝났다. 취소 전과 재커밋의 파일 내용은 같다. reflog에서도 `5e842c5` 커밋 → `6f1bc7e`로 reset → `d63e6c6` 재커밋 순서를 확인했다.
+
+실습 변경에 A 담당 두 줄의 의도하지 않은 복원이 포함되어, 재커밋 후 별도 수정으로 A의 작업 시작 안내와 브랜치 예시를 복원했다. 기존 공유 커밋을 다시 reset하거나 force push하지 않았다.
 
 ## revert — C
 
