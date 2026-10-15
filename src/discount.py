@@ -13,6 +13,7 @@ def discounted_price(price, percent):
 
 if __name__ == "__main__":
     assert discounted_price(10000, 20) == 8000
+    assert discounted_price(10000, 0) == 10000
     assert discounted_price(10000, 100) == 0
     for price, percent in [(-1, 20), (100, 101), (float("inf"), 10)]:
         try:
