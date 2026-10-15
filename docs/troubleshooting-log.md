@@ -44,7 +44,7 @@ git status --short
 ## reset --soft — B
 
 - 참여자 / 역할: Kfri (@Kfri-cloud) / B
-- 상태: 최초 실습 기록은 push 완료. 추가 로컬 실습 및 사후 검증 완료 (2026-10-15), 추가 실습 커밋은 아직 push하지 않음
+- 상태: 최초 및 추가 실습과 사후 검증 완료 (2026-10-15). [Issue #30](https://github.com/1st0Groom/B2-2/issues/30), [PR #27](https://github.com/1st0Groom/B2-2/pull/27)에서 기록 제출 및 리뷰 진행
 - 브랜치: `feature/kfri-collaboration-docs`
 - 상황: push 전 CONTRIBUTING의 PR·리뷰 규칙 변경 커밋을 취소하고 변경은 유지한 뒤 더 구체적인 메시지로 다시 커밋했다.
 - 절차: `git reset --soft HEAD~1`, `git status`, `git diff --cached`, 다시 커밋. PowerShell 명령 기록에서 soft reset 및 cached diff 명령을 확인했다. 당시 status와 cached diff의 터미널 출력은 별도 보존되지 않아 재구성하지 않았다.
