@@ -27,13 +27,31 @@
 
 ## revert — C
 
-- 참여자 / 역할: TODO
-- 상태: 미실습
-- 상황: 개인 feature 브랜치에 잘못된 안내를 commit·push했다.
+- 참여자 / 역할: C — 이성준 (@Opdata) / 실행 및 기록
+- 상태: 완료
+- 상황: 개인 feature 브랜치 `feature/opdata-collaboration-docs`에 README 끝 `실습용 잘못된 안내: main에 직접 push한다.`를 commit·push했다.
 - 절차: `git revert <잘못된커밋해시>`, 다시 push
-- 실제 명령 / 출력: TODO
-- 원래 커밋 / 취소 커밋 / PR 링크: TODO
-- 결과: TODO
+- 실제 명령 / 출력:
+
+```sh
+$ git commit -m "docs: add intentionally incorrect direct-push instruction for revert practice"
+$ git log -1 --oneline
+d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
+$ git push
+   1726bee..d1736e3  feature/opdata-collaboration-docs -> feature/opdata-collaboration-docs
+$ git revert d1736e3 --no-edit
+[feature/opdata-collaboration-docs ec60562] Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
+ 1 file changed, 1 deletion(-)
+$ git push
+   d1736e3..ec60562  feature/opdata-collaboration-docs -> feature/opdata-collaboration-docs
+$ git log --oneline -3
+ec60562 Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
+d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
+1726bee docs: add README execution instructions for average script
+```
+
+- 원래 커밋 / 취소 커밋 / PR 링크: `d1736e3` / `ec60562` / [PR #24](https://github.com/1st0Groom/B2-2/pull/24)
+- 결과: README에서 잘못된 안내 줄이 제거되었고, 원래 커밋과 취소 커밋이 모두 히스토리에 남았다. 17번 줄 실행 안내(`1726bee`)는 그대로 유지되었다.
 - 선택 이유: 공개된 히스토리를 유지하면서 반대 변경을 새 커밋으로 남기기 위해서.
 - 주의점: 일반 커밋 하나를 대상으로 실습한다. merge commit은 사용하지 않는다.
 
