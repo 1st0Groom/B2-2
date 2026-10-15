@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|---|
 | A | TODO | TODO | TODO | TODO | TODO | TODO |
 | B | TODO | TODO | TODO | TODO | TODO | TODO |
-| C | TODO | TODO | TODO | TODO | TODO | TODO |
+| 이성준 (C, `@Opdata`) | [#7](https://github.com/1st0Groom/B2-2/issues/7), [#19](https://github.com/1st0Groom/B2-2/issues/19) | [#15](https://github.com/1st0Groom/B2-2/pull/15), [#24](https://github.com/1st0Groom/B2-2/pull/24) | [#17 리뷰](https://github.com/1st0Groom/B2-2/pull/17#pullrequestreview-5528865410), [#27 리뷰](https://github.com/1st0Groom/B2-2/pull/27#pullrequestreview-5529617116) | [#15 답변](https://github.com/1st0Groom/B2-2/pull/15#discussion_r4279634904)·[반영 커밋](https://github.com/1st0Groom/B2-2/commit/43c0e6a81b5359b6133858b3867d82eadd78dcce), [#24 답변](https://github.com/1st0Groom/B2-2/pull/24#issuecomment-6186230851)·[반영 커밋](https://github.com/1st0Groom/B2-2/commit/bb4e81d546a9090aa0761f376b77bb4df0bd8102) | [`bb59318`](https://github.com/1st0Groom/B2-2/commit/bb59318f82fc8a6b688979abae3a1d73a496338b), [`1726bee`](https://github.com/1st0Groom/B2-2/commit/1726bee606a983726388b8a91b7249ba0328e942) | [revert 기록](docs/troubleshooting-log.md#revert--c) (원본 [`d1736e3`](https://github.com/1st0Groom/B2-2/commit/d1736e332cec72e9caa3ffcb4c8daee5291e5db2) → 취소 [`ec60562`](https://github.com/1st0Groom/B2-2/commit/ec60562ce9f1bd9531254c8619da23949b630e79)), [충돌 1 상대 확인](https://github.com/1st0Groom/B2-2/pull/25#pullrequestreview-5529465738) |
 | D | TODO | TODO | TODO | TODO | TODO | TODO |
 | E | TODO | TODO | TODO | TODO | TODO | TODO |
 
