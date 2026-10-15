@@ -1,6 +1,6 @@
 # 협업 규칙
 
-작업 시작: Issue 생성 후 feature/ysh-collaboration-docs 브랜치 생성
+작업 시작: Issue 생성 → 최신 main 확인 → 담당 작업과 충돌 가능성 공유 → feature/<영문이름>-<작업> 브랜치 생성
 
 ## 브랜치 전략과 이름 — A 담당
 
