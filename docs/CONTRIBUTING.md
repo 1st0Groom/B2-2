@@ -1,12 +1,12 @@
 # 협업 규칙
 
-작업 시작: 최신 main 확인 후 담당 작업과 충돌 가능성 공유
+작업 시작: Issue 생성 → 최신 main 확인 → 담당 작업과 충돌 가능성 공유 → feature/<영문이름>-<작업> 브랜치 생성
 
 ## 브랜치 전략과 이름 — A 담당
 
 - main은 실행 가능한 상태를 유지한다. 직접 push하지 않는다.
 - 작업은 Issue 생성 → 최신 main 확인 → feature 브랜치 → PR → 리뷰 → 승인 → 병합 순서로 한다.
-- 브랜치 이름: `feature/<영문이름>-<작업>` (예: `feature/kim-temperature`).
+- 브랜치 이름: `feature/<영문이름>-<작업>` (예: `feature/ysh-temperature`, `feature/ysh-collaboration-docs`).
 - 공유 브랜치의 히스토리를 재작성하지 않는다. 합의 없는 force push와 rebase를 하지 않는다.
 
 ## 커밋 메시지 — A 담당
