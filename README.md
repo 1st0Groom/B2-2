@@ -14,7 +14,7 @@
 
 ## 실행 방법
 
-실행 방법: 프로젝트 루트에서 python src/average.py 실행
+실행 방법: Python 3.10 이상에서 프로젝트 루트의 각 파일을 직접 실행한다. 예: python src/average.py
 
 Python 3.10 이상에서 프로젝트 루트에서 실행합니다.
 

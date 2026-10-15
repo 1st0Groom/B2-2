@@ -84,12 +84,42 @@ d1736e3 docs: add intentionally incorrect direct-push instruction for revert pra
 
 ## stash / stash pop — D, E
 
-- 실행자: D(실명)
-- 확인 및 공동 기록 작성자: E(실명)
-- 상태: 미실습
+- 실행자: D (`hay-dev2024`)
+- 확인 및 공동 기록 작성자: E (`1st0Groom`, PR #25 리뷰에서 확인)
+- 상태: 실행 및 E 확인 완료
 - 상황: 추적 중인 파일에 미커밋 변경이 있는 상태에서 브랜치 전환이 필요하다.
-- 절차: `git stash push -m "practice: preserve pending edit"`, 브랜치 전환, 원래 브랜치 복귀, `git stash pop`
-- 실제 명령 / 전후 status와 diff: TODO
-- 결과 / 증빙 링크: TODO
+- 절차: `git stash push -m "practice: preserve pending README edit"`, 브랜치 전환, 원래 브랜치 복귀, `git stash pop`
+- 실제 명령:
+
+  ```sh
+  git status --short --branch
+  git diff -- README.md
+  git stash push -m "practice: preserve pending README edit"
+  git stash list
+  git switch main
+  git switch feature/hay-collaboration-docs
+  git stash pop
+  git status --short --branch
+  git diff -- README.md
+  ```
+
+- 실행 전 상태: `feature/hay-collaboration-docs`에서 `README.md`가 수정된 unstaged 상태였다.
+- stash 확인: `stash@{0}: On feature/hay-collaboration-docs: practice: preserve pending README edit`
+- stash 전과 pop 후 동일하게 확인한 `git diff -- README.md` 출력:
+
+  ```diff
+  diff --git a/README.md b/README.md
+  index 7a82253..94146d0 100644
+  --- a/README.md
+  +++ b/README.md
+  @@ -14,7 +14,7 @@
+   ## 실행 방법
+  
+  -실행 방법: 추후 작성
+  +실행 방법: Python 3.10 이상에서 각 파일을 직접 실행
+  ```
+
+- 실행 결과: `main` 전환 후 원래 브랜치로 복귀했으며, `stash pop`으로 README 실행 안내 한 줄이 정상 복원되었다. pop 성공 후 stash 항목은 삭제되었다.
+- 결과 / 증빙 링크: [Issue #20](https://github.com/1st0Groom/B2-2/issues/20), [PR #25](https://github.com/1st0Groom/B2-2/pull/25), [E의 stash 확인 리뷰](https://github.com/1st0Groom/B2-2/pull/25#discussion_r4280047517)
 - 선택 이유: 미완성 변경을 커밋하지 않고 잠시 보관하기 위해서.
 - 주의점: 기본 stash는 새 untracked 파일을 보관하지 않는다. pop 충돌 시 stash가 남을 수 있으므로 상태를 확인한다.
