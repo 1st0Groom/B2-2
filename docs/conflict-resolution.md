@@ -6,7 +6,7 @@
 
 - 해결자: D (`hay-dev2024`)
 - 상대: C — 이성준 (`Opdata`)
-- 상태: 해결 및 커밋 완료 — E 확인 완료, C 확인 대기
+- 상태: 해결 및 커밋 완료 — C/E 확인 완료
 - 두 브랜치가 출발한 커밋: `bf0304e7c57d12b08f92aedaceaa6c8898421fdd`
 - 브랜치 / 파일: `feature/hay-collaboration-docs`, `feature/opdata-collaboration-docs` / `README.md`
 - 상황: 같은 줄을 서로 다른 실행 안내로 수정하고 C의 PR을 먼저 병합했다.
@@ -46,7 +46,7 @@ git merge origin/main
   ```
 
 - 결과 PR / 해결 커밋 링크: [PR #25](https://github.com/1st0Groom/B2-2/pull/25) / [`cf7db10`](https://github.com/1st0Groom/B2-2/commit/cf7db10)
-- 상대 팀원 확인: E의 [충돌 해결 확인 리뷰](https://github.com/1st0Groom/B2-2/pull/25#discussion_r4280045006) 완료, C 확인 대기
+- 상대 팀원 확인: C의 [의도 보존 확인 리뷰](https://github.com/1st0Groom/B2-2/pull/25#pullrequestreview-5529465738), E의 [충돌 해결 확인 리뷰](https://github.com/1st0Groom/B2-2/pull/25#discussion_r4280045006)
 - 배운 점: 같은 시작 커밋에서 같은 줄을 다르게 수정하면 나중에 main을 merge할 때 Git이 어느 내용을 선택할지 판단하지 못해 충돌이 발생한다. 양쪽 의도를 확인한 뒤 마커를 제거하고 결과를 검증해야 한다.
 
 ## 충돌 2 — CONTRIBUTING 작업 시작 절차
