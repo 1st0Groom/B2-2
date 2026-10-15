@@ -38,6 +38,7 @@
 - [충돌 기록 2회](docs/conflict-resolution.md)
 - [트러블슈팅 4종](docs/troubleshooting-log.md)
 - Git 히스토리: [실제 로그 스냅샷](docs/git-history.txt). 기준 main은 `bc0aa0f5c5851cc3213f8c516699f70a5485eabc`이며 A~D의 증빙 PR #29·#32·#33·#35 병합을 포함한다. 이 최종 정리 PR 자체의 커밋은 캡처 후 생성되므로 포함하지 않는다.
+- 최종 병합 후 히스토리: [증빙 Issue #37](https://github.com/1st0Groom/B2-2/issues/37). PR #38 병합 후 아래 절차로 실제 로그 파일을 댓글에 첨부한다. 현재는 첨부 대기이며 저장소의 로그 스냅샷과 구분한다.
 - [main 보호 설정 캡처](docs/evidence/screenshots/main-protection-details.jpg): PR 필수, 승인 1명, 관리자 우회 금지, force push·삭제 금지를 실제 화면에서 확인했다.
 - [E 함수 리뷰 및 반영 캡처](docs/evidence/screenshots/e-function-review.jpg)
 - [E의 D 함수 리뷰·재확인 캡처](docs/evidence/screenshots/e-review-discount.jpg)
@@ -59,6 +60,30 @@
 - 최종 제출 정리 PR에도 담당 Issue 연결, 타인 리뷰와 작성자 응답·승인을 남긴다.
 
 
+### PR #38 병합 후 최종 히스토리 제출 절차
+
+담당자: E 변승언. 실행 시점: PR #38의 승인·병합이 완료된 뒤.
+
+1. GitHub에서 PR #38이 Merged 상태인지 확인한다.
+2. 미커밋 변경이 없음을 확인한 뒤 최신 main을 받고 실제 로그를 새 파일로 내보낸다.
+
+```sh
+cd ~/repos/B2-2-team
+git status --short
+# 출력이 비어 있을 때만 아래 명령을 진행한다.
+git switch main
+git pull --ff-only origin main
+git fetch origin
+git rev-parse origin/main
+git log --oneline --graph --all > /tmp/B2-2-final-git-history.txt
+```
+
+3. [증빙 Issue #37](https://github.com/1st0Groom/B2-2/issues/37)에 새 댓글을 작성하고 `/tmp/B2-2-final-git-history.txt`를 첨부한다. PR 병합으로 Issue가 닫혀 있어도 댓글로 증빙을 추가한다.
+4. 댓글에 수집 일시(Asia/Seoul), 위 명령에서 확인한 origin/main 전체 해시, PR #38의 병합 커밋 링크, 실행 명령을 함께 적는다. 병합 커밋이 최신 main의 히스토리에 포함됐는지 확인한다.
+5. 댓글 등록 후 첨부 파일을 열어 내용이 읽히는지 확인한다. 댓글의 Copy link로 얻은 직접 링크를 PR #38에도 후속 댓글로 남긴다. 이 문서의 Issue #37 링크에서 최종 첨부 댓글에 접근할 수 있다.
+
+최종 증빙의 저장 위치는 **Issue #37의 첨부 댓글**이다. `docs/git-history.txt`는 PR 작성 전 스냅샷으로 보존하며, 파일 갱신을 위한 추가 PR을 반복 생성하지 않는다. 제출 시에는 Issue #37의 최종 댓글 직접 링크를 함께 전달한다. 실제 첨부 전에는 이 절차를 수행 완료로 표시하지 않는다.
+
 ## 최종 체크
 
 실제 조회·문서·캡처로 확인한 항목만 완료 표시했다. 마지막 PR 승인·병합 전 미완료 항목을 확인한다.
@@ -76,3 +101,4 @@
 - [x] 전원 Git 트러블슈팅 기록 참여 증빙
 - [x] 협업 문서 3종, Git 히스토리 및 main 보호 캡처
 - [ ] 최종 제출 정리 PR에 Issue 연결·타인 리뷰·작성자 응답·승인 후 병합
+- [ ] PR #38 병합 후 최종 Git 로그를 Issue #37에 첨부하고 직접 댓글 링크 공유
