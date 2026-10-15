@@ -5,12 +5,39 @@
 
 ## amend — A
 
-- 참여자 / 역할: TODO
-- 상태: 미실습
+- 참여자 / 역할: ysh (@netrunnerr25) / A
+- 상태: 로컬 amend 실습 완료 (2026-10-15), PR 리뷰·승인은 별도 진행
 - 상황: push 전 최근 커밋의 메시지에 잘못된 함수명이 들어갔다.
-- 절차: `git commit --amend -m "정확한 메시지"`
-- 수정 전후 `git log -1 --oneline` 출력: TODO
-- 결과 / 증빙 링크: TODO
+- 절차: CONTRIBUTING의 A 담당 변경만 stage하고 아직 push하지 않은 최근 커밋의 메시지를 수정했다.
+
+```sh
+git status --short --branch
+git log -5 --oneline
+git diff --check
+git add docs/CONTRIBUTING.md
+git commit -m "docs: describe temperature branch naming rules"
+git log -1 --format='%H %s'
+git commit --amend -m "docs: define team branch naming and commit rules"
+git log -1 --format='%H %s'
+git status --short
+```
+
+- 수정 전 실제 출력:
+
+```text
+2721900a19a59cdf786f38f612799c52d0fef10a docs: describe temperature branch naming rules
+```
+
+- 수정 후 실제 출력:
+
+```text
+393795e3537eb5f6a33a55e2adbcd42d19619654 docs: define team branch naming and commit rules
+```
+
+- 결과: 메시지와 커밋 해시가 변경되었다. amend 직후 `git status --short` 출력은 비어 있었다.
+- 내용 검증: `git diff 2721900a19a59cdf786f38f612799c52d0fef10a 393795e3537eb5f6a33a55e2adbcd42d19619654 --exit-code`가 출력 없이 종료 코드 0으로 끝나 파일 내용이 같음을 확인했다.
+- 브랜치: `feature/ysh-collaboration-docs`. E와의 동일 기준 커밋 확인은 별도 확인이 필요하다.
+- 증빙: [수정 후 커밋](https://github.com/1st0Groom/B2-2/commit/393795e3537eb5f6a33a55e2adbcd42d19619654), [담당 Issue #10](https://github.com/1st0Groom/B2-2/issues/10), [충돌 실습 Issue #22](https://github.com/1st0Groom/B2-2/issues/22). 수정 전 커밋은 push하지 않았다.
 - 선택 이유: 최근 로컬 커밋의 메시지만 수정하기 위해서.
 - 주의점: 커밋 해시가 바뀐다. 이 실습은 push 전에 한다.
 
@@ -27,13 +54,31 @@
 
 ## revert — C
 
-- 참여자 / 역할: TODO
-- 상태: 미실습
-- 상황: 개인 feature 브랜치에 잘못된 안내를 commit·push했다.
+- 참여자 / 역할: C — 이성준 (@Opdata) / 실행 및 기록
+- 상태: 완료
+- 상황: 개인 feature 브랜치 `feature/opdata-collaboration-docs`에 README 끝 `실습용 잘못된 안내: main에 직접 push한다.`를 commit·push했다.
 - 절차: `git revert <잘못된커밋해시>`, 다시 push
-- 실제 명령 / 출력: TODO
-- 원래 커밋 / 취소 커밋 / PR 링크: TODO
-- 결과: TODO
+- 실제 명령 / 출력:
+
+```sh
+$ git commit -m "docs: add intentionally incorrect direct-push instruction for revert practice"
+$ git log -1 --oneline
+d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
+$ git push
+   1726bee..d1736e3  feature/opdata-collaboration-docs -> feature/opdata-collaboration-docs
+$ git revert d1736e3 --no-edit
+[feature/opdata-collaboration-docs ec60562] Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
+ 1 file changed, 1 deletion(-)
+$ git push
+   d1736e3..ec60562  feature/opdata-collaboration-docs -> feature/opdata-collaboration-docs
+$ git log --oneline -3
+ec60562 Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
+d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
+1726bee docs: add README execution instructions for average script
+```
+
+- 원래 커밋 / 취소 커밋 / PR 링크: `d1736e3` / `ec60562` / [PR #24](https://github.com/1st0Groom/B2-2/pull/24)
+- 결과: README에서 잘못된 안내 줄이 제거되었고, 원래 커밋과 취소 커밋이 모두 히스토리에 남았다. 17번 줄 실행 안내(`1726bee`)는 그대로 유지되었다.
 - 선택 이유: 공개된 히스토리를 유지하면서 반대 변경을 새 커밋으로 남기기 위해서.
 - 주의점: 일반 커밋 하나를 대상으로 실습한다. merge commit은 사용하지 않는다.
 
