@@ -39,4 +39,3 @@ python src/time_convert.py
 GitHub Flow를 선택한 이유: 작은 작업을 브랜치로 분리하여 main을 안정적으로 유지한다.
 PR에서 리뷰와 검증을 진행한다.
 승인된 작업만 병합해 변경 이유와 과정을 추적한다.
-실습용 잘못된 안내: main에 직접 push한다.
