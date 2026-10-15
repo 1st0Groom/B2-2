@@ -43,12 +43,31 @@ git status --short
 
 ## reset --soft — B
 
-- 참여자 / 역할: TODO
-- 상태: 미실습
-- 상황: push 전 최근 커밋을 취소하고 변경은 유지하려 한다.
-- 절차: `git reset --soft HEAD~1`, `git status`, `git diff --cached`, 다시 커밋
-- 실제 명령 / 출력: TODO
-- 결과 / 증빙 링크: TODO
+- 참여자 / 역할: Kfri (@Kfri-cloud) / B
+- 상태: 로컬 실습 및 사후 검증 완료 (2026-10-15), push·PR은 미완료
+- 브랜치: `feature/kfri-collaboration-docs`
+- 상황: push 전 CONTRIBUTING의 PR·리뷰 규칙 변경 커밋을 취소하고 변경은 유지한 뒤 더 구체적인 메시지로 다시 커밋했다.
+- 절차: `git reset --soft HEAD~1`, `git status`, `git diff --cached`, 다시 커밋. PowerShell 명령 기록에서 soft reset 및 cached diff 명령을 확인했다. 당시 status와 cached diff의 터미널 출력은 별도 보존되지 않아 재구성하지 않았다.
+- 사후 확인 명령: `git log -3 --oneline`, `git reflog -10`
+- 실제 reflog 출력 중 해당 실습 구간:
+
+```text
+15850c0 HEAD@{0}: commit: docs: define issue-linked PR and substantive review requirements
+09b7a4a HEAD@{1}: reset: moving to HEAD~1
+c7e787b HEAD@{2}: commit: docs: define PR and review requirements
+```
+
+- 취소 전 커밋: `c7e787b docs: define PR and review requirements`
+- 다시 만든 커밋: `15850c0 docs: define issue-linked PR and substantive review requirements`
+- 내용 검증: `git diff c7e787b 15850c0 --exit-code`는 출력 없이 종료 코드 0으로 끝났다. 취소 전과 다시 만든 커밋의 파일 내용이 동일함을 확인했다.
+- 검증 당시 `git status --short --branch` 실제 출력 (이 기록 문서를 수정하기 전):
+
+```text
+## feature/kfri-collaboration-docs...origin/main [ahead 1]
+```
+
+- 결과: 로컬 커밋 취소 후 동일한 문서 변경으로 새 커밋을 만들었다. 사진에는 커밋 취소 후 변경 파일이 유지된 상태가 남아 있다. staged 상태 자체는 당시 터미널 출력이 없어 별도 증빙하지 못했다.
+- 증빙: 로컬 reflog와 스크린샷 `kfri-1_commit.jpg`, `kfri-2_reset.jpg`, `kfri-2_reset2.jpg`, `kfri-3_commit.jpg`. 스크린샷은 앞선 반복 실습 장면이며, 위 해시는 최종 실습 구간 기준이다. 업로드 후 PR과 최종 커밋 링크를 추가한다.
 - 선택 이유: 커밋을 취소하면서 변경을 staged 상태로 유지하기 위해서.
 - 주의점: 직전 커밋이 존재해야 한다. 공유·push된 커밋에는 이 실습을 하지 않는다.
 
