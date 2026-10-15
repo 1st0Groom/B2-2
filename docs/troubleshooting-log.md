@@ -5,12 +5,39 @@
 
 ## amend — A
 
-- 참여자 / 역할: TODO
-- 상태: 미실습
+- 참여자 / 역할: ysh (@netrunnerr25) / A
+- 상태: 로컬 amend 실습 완료 (2026-10-15), PR 리뷰·승인은 별도 진행
 - 상황: push 전 최근 커밋의 메시지에 잘못된 함수명이 들어갔다.
-- 절차: `git commit --amend -m "정확한 메시지"`
-- 수정 전후 `git log -1 --oneline` 출력: TODO
-- 결과 / 증빙 링크: TODO
+- 절차: CONTRIBUTING의 A 담당 변경만 stage하고 아직 push하지 않은 최근 커밋의 메시지를 수정했다.
+
+```sh
+git status --short --branch
+git log -5 --oneline
+git diff --check
+git add docs/CONTRIBUTING.md
+git commit -m "docs: describe temperature branch naming rules"
+git log -1 --format='%H %s'
+git commit --amend -m "docs: define team branch naming and commit rules"
+git log -1 --format='%H %s'
+git status --short
+```
+
+- 수정 전 실제 출력:
+
+```text
+2721900a19a59cdf786f38f612799c52d0fef10a docs: describe temperature branch naming rules
+```
+
+- 수정 후 실제 출력:
+
+```text
+393795e3537eb5f6a33a55e2adbcd42d19619654 docs: define team branch naming and commit rules
+```
+
+- 결과: 메시지와 커밋 해시가 변경되었다. amend 직후 `git status --short` 출력은 비어 있었다.
+- 내용 검증: `git diff 2721900a19a59cdf786f38f612799c52d0fef10a 393795e3537eb5f6a33a55e2adbcd42d19619654 --exit-code`가 출력 없이 종료 코드 0으로 끝나 파일 내용이 같음을 확인했다.
+- 브랜치: `feature/ysh-collaboration-docs`. E와의 동일 기준 커밋 확인은 별도 확인이 필요하다.
+- 증빙: [수정 후 커밋](https://github.com/1st0Groom/B2-2/commit/393795e3537eb5f6a33a55e2adbcd42d19619654), [담당 Issue #10](https://github.com/1st0Groom/B2-2/issues/10), [충돌 실습 Issue #22](https://github.com/1st0Groom/B2-2/issues/22). 수정 전 커밋은 push하지 않았다.
 - 선택 이유: 최근 로컬 커밋의 메시지만 수정하기 위해서.
 - 주의점: 커밋 해시가 바뀐다. 이 실습은 push 전에 한다.
 
