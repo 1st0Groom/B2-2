@@ -1,0 +1,81 @@
+Git history snapshot — 2026-10-15 (Asia/Seoul)
+Repository: https://github.com/1st0Groom/B2-2
+Fetched origin/main: 8a806a6380ad8461dd46d333e3881ed2e1c70e7f
+Command: git log --oneline --graph --all
+Scope: fetched refs and local branches at capture time; includes unmerged work.
+Not the final team history. Refresh after all final PRs are merged.
+This evidence PR itself is not included in this snapshot.
+
+* 2d5ef0d docs: record teammate confirmation of conflict resolution
+* 83464f8 docs: address review feedback on Git practice records
+* b0860c9 docs: link README conflict resolution evidence
+*   cf7db10 docs: resolve conflicting README execution instructions
+|\  
+* | 98dc50e docs: add README instructions and stash practice record
+| | *   6f1bc7e Merge remote-tracking branch 'origin/feature/kfri-collaboration-docs' into feature/kfri-collaboration-docs
+| | |\  
+| | | * a9f36f3 docs: record B soft reset practice
+| | * | e584ffd docs: require commit and verification details for re-review
+| | |/  
+| | * 15850c0 docs: define issue-linked PR and substantive review requirements
+| | | * 8a806a6 Merge pull request #26 from 1st0Groom/feature/SeungEon-collaboration-docs
+| | |/| 
+| |/| | 
+| | | *   33c2a4b docs: 작업 시작 절차 충돌 해결과 실습 기록 추가
+| | | |\  
+| | | |/  
+| | |/|   
+| | | * d35c053 docs: 작업 시작 전 최신 main확인과 작업 공유 명시
+| |_|/  
+|/| |   
+| * |   8d9ad91 Merge pull request #24 from 1st0Groom/feature/opdata-collaboration-docs
+| |\ \  
+| | |/  
+| |/|   
+| | * bb4e81d docs: record revert practice in troubleshooting log
+| | * ec60562 Revert "docs: add intentionally incorrect direct-push instruction for revert practice"
+| | * d1736e3 docs: add intentionally incorrect direct-push instruction for revert practice
+| | * 1726bee docs: add README execution instructions for average script
+| |/  
+|/|   
+| * 09b7a4a Merge pull request #23 from 1st0Groom/feature/ysh-collaboration-docs
+|/| 
+| * 5ca673e docs: record A local amend practice and verification
+| * 393795e docs: define team branch naming and commit rules
+|/  
+*   bf0304e Merge pull request #17 from 1st0Groom/feature/kfri-text-count
+|\  
+| * 455403a fix: reject non-string input in text count
+| * e684343 fix: replace mistaken discount upload with text count function
+| * 4fedc71 feat: add discounted price function and examples
+* |   a4cc848 Merge pull request #14 from 1st0Groom/feature/hay-discount
+|\ \  
+| * | 41183d7 test: cover zero-percent discount
+| * | 721414a feat: add discounted price calculator
+| |/  
+* |   8ab9c4f Merge pull request #15 from 1st0Groom/feature/opdata-average
+|\ \  
+| * | 43c0e6a refactor: add type hints to average function
+| * | bb59318 feat: add average calculation for number lists
+| |/  
+* |   80af7f2 Merge pull request #18 from 1st0Groom/feature/ysh-temperature-input-docs
+|\ \  
+| * | a27e948 docs: clarify unsupported temperature inputs and verify TypeError
+|/ /  
+* |   5da0b79 Merge pull request #13 from 1st0Groom/feature/ysh-temperature
+|\ \  
+| * | 541ca1a feat: adapt supplied temperature example with boundary checks
+| * | cca7396 feat: add Celsius to Fahrenheit conversion
+| |/  
+* |   550f845 Merge pull request #11 from 1st0Groom/feature/SeungEon-time-convert
+|\ \  
+| |/  
+|/|   
+| * 80dc690 test: 분과 시간 전환 경계값 검증 추가
+| * 9712de6 feat: 초를 시,분,초로 변환하는 함수 추가
+|/  
+*   9713208 Merge pull request #1 from 1st0Groom/chore/team-setup
+|\  
+| * faf68ff docs: add team collaboration setup
+|/  
+* df044e6 Initial commit
